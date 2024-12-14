@@ -1,0 +1,11 @@
+services:
+  franken:
+    container_name: app
+    build: ./Docker/frankenphp
+    ports:
+      - "80:80" # HTTP
+      - "443:443" # HTTPS
+      - "443:443/udp" # HTTP/3
+    volumes:
+      - ./app:/app
+    tty: true
